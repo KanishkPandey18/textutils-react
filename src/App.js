@@ -48,7 +48,7 @@ function App() {
       <div className="container my-3" >
         <Routes>
           <Route path="/about" element={<About mode={mode} togglemode={toggleMode}/>}/>
-          <Route path="/" element= {<TextForm heading = "Write Your Text Here" mode={mode} showAlert={showAlert}/>}/>
+          <Route path="/" element= {<TextForm heading = "Try TextUtils - Word Counter, Character Counter, Remove Extra-Spaces" mode={mode} showAlert={showAlert}/>}/>
         </Routes>
       </div>
     </Router>

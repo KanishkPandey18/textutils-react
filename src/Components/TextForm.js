@@ -49,18 +49,18 @@ export default function TextForm(props) {
     <div className={`container text-${props.mode==='light'?'dark':'light'}`}>
         <h1>{props.heading}</h1>
         <div className="mb-3">
-            <textarea className={`form-control`} style={{backgroundColor: props.mode==='dark' ? 'grey':'white',color: props.mode==='dark' ? 'white':'black'}} id="exampleFormControlTextarea1"  onChange={onChange} rows="8" value={text}></textarea>
+            <textarea className={`form-control`} style={{backgroundColor: props.mode==='dark' ? 'rgb(37 74 104)':'white',color: props.mode==='dark' ? 'white':'black'}} id="exampleFormControlTextarea1"  onChange={onChange} rows="8" value={text}></textarea>
         </div>
-        <button className="btn btn-primary mx-2" onClick={onUpclick}>UPPERCASE</button>
-        <button className="btn btn-primary mx-2" onClick={onlowclick}>lowercase</button>
-        <button className="btn btn-primary mx-2" onClick={onsenclick}>Sentance case</button>
-        <button className="btn btn-primary mx-2" onClick={onclearclick}>Clear Text</button>
-        <button className="btn btn-primary mx-2" onClick={extraSpace}>Remove Extra Space</button>
-        <button className="btn btn-primary mx-2" onClick={copyText}>Copy Text</button>
+        <button className="btn btn-primary mx-2 my-1" onClick={onUpclick}>UPPERCASE</button>
+        <button className="btn btn-primary mx-2 my-1" onClick={onlowclick}>lowercase</button>
+        <button className="btn btn-primary mx-2 my-1" onClick={onsenclick}>Sentance case</button>
+        <button className="btn btn-primary mx-2 my-1" onClick={onclearclick}>Clear Text</button>
+        <button className="btn btn-primary mx-2 my-1" onClick={extraSpace}>Remove Extra Space</button>
+        <button className="btn btn-primary mx-2 my-1" onClick={copyText}>Copy Text</button>
     </div>
     <div className={`container text-${props.mode==='light'?'dark':'light'}`}>
         <h1>Your Text Summary</h1>
-        <p>{text.split(" ").length} Words and {text.length} Characters</p>
+        <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} Words and {text.length} Characters</p>
         <h2>Preview</h2>
         <p>{text.length>0 ? text : "Enter text above to preview it here"}</p>
     </div>
