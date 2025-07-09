@@ -6,7 +6,7 @@ export default function Navbar(props) {
     return (
         <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
             <div className="container-fluid">
-                <Link className="navbar-brand" to="/">
+                <Link className="navbar-brand" to="#">
                     {props.title}
                 </Link>
                 <button
@@ -33,20 +33,11 @@ export default function Navbar(props) {
                             </Link>
                         </li>
                     </ul>
-                    <form className="d-flex" role="search">
-                        <input
-                            className="form-control me-2"
-                            type="search"
-                            placeholder="Search"
-                            aria-label="Search"
-                        />
-                        <button className="btn btn-outline-success" type="submit">
-                            Search
-                        </button>
-                    </form>
-                    <div className={`form-check form-switch text-${props.mode==='light'?'dark':'light'} mx-2`}>
-                        <input className="form-check-input" type="checkbox" onClick={props.togglemode} role="switch" id="switchCheckDefault"/>
-                        <label className="form-check-label" htmlFor="switchCheckDefault">Enable Darkmode</label>
+                    <div className="d-flex">
+                        <div className="bg-primary rounded mx-2" style={{height:'30px' , width : '30px' }} onClick={()=>{props.togglemode('primary')}}></div>
+                        <div className="bg-success rounded mx-2" style={{height:'30px' , width : '30px' }} onClick={()=>{props.togglemode('success')}}></div>
+                        <div className="bg-warning rounded mx-2" style={{height:'30px' , width : '30px' }} onClick={()=>{props.togglemode('warning')}}></div>
+                        <div className="bg-danger rounded mx-2" style={{height:'30px' , width : '30px' }} onClick={()=>{props.togglemode('danger')}}></div>  
                     </div>
                 </div>
             </div>

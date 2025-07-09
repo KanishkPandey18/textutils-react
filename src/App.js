@@ -27,7 +27,16 @@ function App() {
     showAlert(null)
   }, 5000);
 
-  const toggleMode= ()=> {
+  const removeBackground = () => {
+    document.body.classList.remove('bg-success')
+    document.body.classList.remove('bg-danger')
+    document.body.classList.remove('bg-warning')
+    document.body.classList.remove('bg-primary')
+  }
+
+  const toggleMode= (cls)=> {
+    removeBackground()
+    document.body.classList.add('bg-'+cls)
     if(mode==='dark'){
       setmode('light')
       document.body.style.backgroundColor = 'white'
